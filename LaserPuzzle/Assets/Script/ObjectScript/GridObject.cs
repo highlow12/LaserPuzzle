@@ -28,7 +28,7 @@ public abstract class GridObject : MonoBehaviour
             else if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
             {
                 //+x으로 이동
-                transform.position = transform.position + Vector3.forward;
+                transform.position = transform.position + Vector3.right;
             }
             else if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
             {
@@ -39,6 +39,15 @@ public abstract class GridObject : MonoBehaviour
             {
                 //+z으로 이동
                 transform.position = transform.position + Vector3.forward;
+            }
+
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                transform.localEulerAngles = transform.localEulerAngles + new Vector3(0, 90, 0);
+            }
+            else if (Input.GetKeyDown(KeyCode.Q))
+            {
+                transform.localEulerAngles = transform.localEulerAngles + new Vector3(0, -90, 0);
             }
         }
     }
@@ -84,7 +93,8 @@ public abstract class GridObject : MonoBehaviour
     protected virtual void Update()
     {
         gridSnap();
-        angleSnap();
+        //angleSnap();
+        keyboardMove();
     }
 
 }
