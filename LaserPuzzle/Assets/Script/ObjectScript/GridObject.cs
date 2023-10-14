@@ -18,7 +18,7 @@ public abstract class GridObject : MonoBehaviour
 
     protected void keyboardMove()
     {
-        if (isSelected)
+        if (isSelected && canMove)
         {
             if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
             {
@@ -54,7 +54,7 @@ public abstract class GridObject : MonoBehaviour
 
     protected void DragAndDropMove() 
     {
-        if (isSelected)
+        if (isSelected && canMove)
         {
             //나중에 구현
         }

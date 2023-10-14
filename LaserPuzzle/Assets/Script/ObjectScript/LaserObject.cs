@@ -11,31 +11,30 @@ public class LaserObject : GridObject
         
         Debug.DrawRay(origin + Vector3.up + Vector3.forward * 0.25f, dir * 9, Color.green, 10000);
         
-        if (Physics.Raycast(origin + Vector3.up + Vector3.forward ,dir,out hit, 9))
+        if (Physics.Raycast(origin + Vector3.up + Vector3.forward * 0.25f, dir,out hit, 9.75f))
         {
-            
-            //LaserManager.Instance.CallLaser(origin, hit.transform.position);
 
-            LaserObject laser;
-            if(hit.collider.TryGetComponent(out laser))
+            LaserManager.Instance.shootLaser(origin, hit.transform.position);
+
+            if (hit.collider.TryGetComponent(out LaserObject laser))
             {
                 laser.hitLaser(transform.position);
             }
         }
         else
         {
-            //LaserManager.Instance.CallLaser(origin, dir * 10);
+            LaserManager.Instance.shootLaser(origin, transform.position + transform.forward * 9);
         }
 
     }
 
-    public virtual void hitLaser(Vector3 direction)
+    public virtual void hitLaser(Vector3 dir)
     {
         
     }
     private void Start()
     {
-        //shootLaser(transform.position,transform.forward);
+        shootLaser(transform.position,transform.forward);
     }
 
     // Update is called once per frame

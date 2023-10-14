@@ -8,6 +8,9 @@ public class LaserManager : MonoBehaviour
     static LaserManager instance = null;
 
     public GameObject Laser;
+
+    List<Transform> lasers = new List<Transform>();
+
     public static LaserManager Instance
     {
         get
@@ -22,13 +25,6 @@ public class LaserManager : MonoBehaviour
             }
         }
     }
-    struct Vector3s
-    {
-        public Vector3 origin;
-        public Vector3 target;
-    }
-
-    Queue<Vector3s> queue;
 
     void Awake()
     {
@@ -42,27 +38,45 @@ public class LaserManager : MonoBehaviour
         }
     }
 
-
-
-    public void CallLaser(Vector3 origin, Vector3 target)
+    public void shootLaser(Vector3 origin, Vector3 target)
     {
-        Vector3s V;
-        V.origin = origin;
-        V.target = target;
+        var laser = Instantiate(Laser).transform;
+        laser.SetParent(transform);
 
-        queue.Enqueue(V);
+        var dir = target - origin;
+
+
+        laser.position = transform.position + dir * 0.5f + Vector3.up*0.5f;
+        var i = dir.x+dir.z;
+        laser.localScale = new Vector3(laser.localScale.x, laser.localScale.y, i);
+        
+        dir = dir.normalized;
+
+        laser.rotation = Quaternion.Euler(dir);
+
+        //laser.gameObject.SetActive(false);
+
+        lasers.Add(laser);
 
     }
 
-    public void MakeLaser()
+    private void showLasers()
     {
-        foreach (var item in queue)
+        foreach (Transform t in lasers) 
         {
-            var laser = Instantiate(Laser);
+            t.gameObject.SetActive(true);
+        }
+    }
+    private void Start()
+    {
+        lasers.Clear();
+    }
 
-            laser.transform.position = (item.target - item.origin) / 2;
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
 
-            //스케일조정
         }
     }
 
