@@ -46,7 +46,7 @@ public class LaserManager : MonoBehaviour
         var dir = target - origin;
 
 
-        laser.position = transform.position + dir * 0.5f + Vector3.up*0.5f;
+        laser.position = origin + dir * 0.5f + Vector3.up*0.5f;
         var i = dir.x+dir.z;
         laser.localScale = new Vector3(laser.localScale.x, laser.localScale.y, i);
         

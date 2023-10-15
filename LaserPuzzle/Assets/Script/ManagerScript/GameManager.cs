@@ -43,14 +43,21 @@ public class GameManager : MonoBehaviour
     public void laserReceve()
     {
         laserRecevedNum++;
-        if (laserRecevedNum == allReceverNum)
-        {
-            clearGame();
-        }
+        
     }
 
     void clearGame()
     {
         Debug.Log("GameClear");
+    }
+
+    private void Update()
+    {
+        if (laserRecevedNum == allReceverNum)
+        {
+            
+            clearGame();
+        }
+        
     }
 }

@@ -356,6 +356,8 @@
 "Assets/Script/ManagerScript/LaserManager.cs"
 "Assets/Script/ObjectScript/GridObject.cs"
 "Assets/Script/ObjectScript/LaserObject.cs"
+"Assets/Script/ObjectScript/LaserRecever.cs"
+"Assets/Script/ObjectScript/LaserShooter.cs"
 -langversion:9.0
 
 /deterministic

@@ -15,10 +15,10 @@ public class LaserObject : GridObject
         {
 
             LaserManager.Instance.shootLaser(origin, hit.transform.position);
-
+            Debug.Log(hit.transform.position);
             if (hit.collider.TryGetComponent(out LaserObject laser))
             {
-                laser.hitLaser(transform.position);
+                laser.hitLaser(dir);
             }
         }
         else
@@ -32,9 +32,9 @@ public class LaserObject : GridObject
     {
         
     }
-    private void Start()
+    protected virtual void Start()
     {
-        shootLaser(transform.position,transform.forward);
+        //shootLaser(transform.position,transform.forward);
     }
 
     // Update is called once per frame
