@@ -4,10 +4,17 @@ using UnityEngine;
 
 public class LaserRecever : LaserObject
 {
+    public Material originalMat;
+    public Material changeMat;
+
+    Material frontMat;
     protected override void Start()
     {
+        frontMat = transform.GetChild(1).GetComponent<MeshRenderer>().material;
 
         GameManager.Instance.addRecever();
+
+          
     }
 
     public override void hitLaser(Vector3 dir)
@@ -16,6 +23,12 @@ public class LaserRecever : LaserObject
         {
             Debug.Log("receve");
             GameManager.Instance.laserReceve();
+
+            transform.GetChild(1).GetComponent<MeshRenderer>().material = changeMat;
+        }
+        else
+        {
+            transform.GetChild(1).GetComponent<MeshRenderer>().material = originalMat;
         }
     }
 
