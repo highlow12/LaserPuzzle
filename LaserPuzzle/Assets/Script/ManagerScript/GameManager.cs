@@ -57,6 +57,7 @@ public class GameManager : MonoBehaviour
         {
             
             clearGame();
+            laserRecevedNum++;
         }
         
     }

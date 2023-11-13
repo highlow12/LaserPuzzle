@@ -354,6 +354,7 @@
 -analyzer:"D:/UnityEngine/2022.3.9f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
 "Assets/Script/ManagerScript/GameManager.cs"
 "Assets/Script/ManagerScript/LaserManager.cs"
+"Assets/Script/ManagerScript/LoadManager.cs"
 "Assets/Script/ObjectScript/GridObject.cs"
 "Assets/Script/ObjectScript/LaserObject.cs"
 "Assets/Script/ObjectScript/LaserRecever.cs"
