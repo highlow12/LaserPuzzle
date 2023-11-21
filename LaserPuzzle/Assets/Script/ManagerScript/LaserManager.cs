@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 
@@ -47,13 +48,15 @@ public class LaserManager : MonoBehaviour
 
 
         laser.position = origin + dir * 0.5f + Vector3.up*0.5f;
-        var i = dir.x+dir.z;
+        var i = dir.x + dir.z;
         laser.localScale = new Vector3(laser.localScale.x, laser.localScale.y, i);
-        
+
         dir = dir.normalized;
 
-        laser.rotation = Quaternion.Euler(dir);
+        Vector3 angle = new(0, Vector3.SignedAngle(Vector3.forward,dir,Vector3.up), 0);
+        //Debug.Log(angle);
 
+        laser.localRotation = Quaternion.Euler(angle);
         //laser.gameObject.SetActive(false);
 
         lasers.Add(laser);

@@ -15,7 +15,7 @@ public class LaserObject : GridObject
         {
 
             LaserManager.Instance.shootLaser(origin, hit.transform.position);
-            Debug.Log(hit.transform.position);
+            //Debug.Log(hit.transform.position);
             if (hit.collider.TryGetComponent(out LaserObject laser))
             {
                 laser.hitLaser(dir);
@@ -23,7 +23,7 @@ public class LaserObject : GridObject
         }
         else
         {
-            LaserManager.Instance.shootLaser(origin, transform.position + transform.forward * 9);
+            LaserManager.Instance.shootLaser(origin, transform.position + dir * 9);
         }
 
     }

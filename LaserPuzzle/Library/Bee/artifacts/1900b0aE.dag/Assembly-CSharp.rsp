@@ -356,6 +356,8 @@
 "Assets/Script/ManagerScript/LaserManager.cs"
 "Assets/Script/ManagerScript/LoadManager.cs"
 "Assets/Script/ObjectScript/GridObject.cs"
+"Assets/Script/ObjectScript/LaserHalfMirror.cs"
+"Assets/Script/ObjectScript/LaserMirror.cs"
 "Assets/Script/ObjectScript/LaserObject.cs"
 "Assets/Script/ObjectScript/LaserPortalIn.cs"
 "Assets/Script/ObjectScript/LaserPortalOut.cs"
