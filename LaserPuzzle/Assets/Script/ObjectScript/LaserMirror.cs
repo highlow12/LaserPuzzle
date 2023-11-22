@@ -11,10 +11,9 @@ public class LaserMirror : LaserObject
 
     public override void hitLaser(Vector3 dir)
     {
-        //base.hitLaser(dir);
+        base.hitLaser(dir);
 
         Vector3 mirrorLaserDirection = transform.right;
         shootLaser(transform.position, mirrorLaserDirection);
-        
     }
 }

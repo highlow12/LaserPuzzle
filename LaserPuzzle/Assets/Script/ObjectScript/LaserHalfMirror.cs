@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LaserHalfMirror : LaserObject
 {
-    protected override void Start()
+    void Start()
     {
         base.Start();
     }
