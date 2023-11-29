@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class LaserHalfMirror : LaserObject
 {
-    void Start()
-    {
-        base.Start();
-    }
+    //void Start()
+    //{
+    //    base.Start();
+    //}
 
     public override void hitLaser(Vector3 dir)
     {
