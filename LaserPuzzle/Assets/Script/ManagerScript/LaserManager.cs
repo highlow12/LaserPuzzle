@@ -41,6 +41,7 @@ public class LaserManager : MonoBehaviour
 
     public void shootLaser(Vector3 origin, Vector3 target)
     {
+        //Debug.Log(target);
         var laser = Instantiate(Laser).transform;
         laser.SetParent(transform);
 
@@ -49,7 +50,7 @@ public class LaserManager : MonoBehaviour
 
         laser.position = origin + dir * 0.5f + Vector3.up*0.5f;
         var i = dir.x + dir.z;
-        laser.localScale = new Vector3(laser.localScale.x, laser.localScale.y, i);
+        laser.localScale = new Vector3(laser.localScale.x, laser.localScale.y, Mathf.Abs(i));
 
         dir = dir.normalized;
 

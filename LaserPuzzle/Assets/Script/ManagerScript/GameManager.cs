@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,6 +6,8 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     static GameManager instance = null;
+
+    public Action<Vector3, Vector3> LaserStartShoot; //레이저 슈터가 레이저를 쏘게 하는 델리게이트
 
     int allReceverNum = 0;
     int laserRecevedNum = 0;
@@ -46,6 +49,11 @@ public class GameManager : MonoBehaviour
         
     }
 
+    public void laserStart()//이 함수를 실행시키면 모든 레이저 슈터가 레이저를 발사한다
+    {
+        LaserStartShoot(Vector3.zero, Vector3.zero);
+    }
+
     void clearGame()
     {
         Debug.Log("GameClear");
@@ -61,4 +69,5 @@ public class GameManager : MonoBehaviour
         }
         
     }
+
 }

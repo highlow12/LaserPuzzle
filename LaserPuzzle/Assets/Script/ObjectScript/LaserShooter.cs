@@ -4,12 +4,23 @@ using UnityEngine;
 
 public class LaserShooter : LaserObject
 {
+
+    protected override void shootLaser(Vector3 origin, Vector3 dir)
+    {
+        origin = transform.position;
+        dir = transform.forward;
+        base.shootLaser(origin, dir);
+        //Debug.Log("origin: " + origin + " dir: " + dir);
+    }
+
     protected override void Start()
     {
         base.Start();
 
-        shootLaser(transform.position, transform.forward);
+       GameManager.Instance.LaserStartShoot += shootLaser;
     }
+
+    
 
 
 }

@@ -13,6 +13,8 @@ public class LaserHalfMirror : LaserObject
     {
         base.hitLaser(dir);
 
+        Debug.Log("hitLaserHalfMirror");
+
         Vector3 mirrorLaserDirectionRight = transform.right;
         Vector3 mirrorLaserDirectionForward = transform.forward;
 
