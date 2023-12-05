@@ -4,16 +4,11 @@ using UnityEngine;
 
 public class LaserMirror : LaserObject
 {
-    //void Start()
-    //{
-    //    base.Start();
-    //}
-
     public override void hitLaser(Vector3 dir)
     {
         base.hitLaser(dir);
 
-        Vector3 mirrorLaserDirection = transform.right;
+        Vector3 mirrorLaserDirection = Quaternion.Euler(0, 90, 0) * dir;
         shootLaser(transform.position, mirrorLaserDirection);
     }
 }

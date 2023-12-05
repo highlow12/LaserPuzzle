@@ -4,19 +4,14 @@ using UnityEngine;
 
 public class LaserHalfMirror : LaserObject
 {
-    //void Start()
-    //{
-    //    base.Start();
-    //}
-
     public override void hitLaser(Vector3 dir)
     {
         base.hitLaser(dir);
 
         Debug.Log("hitLaserHalfMirror");
 
-        Vector3 mirrorLaserDirectionRight = transform.right;
-        Vector3 mirrorLaserDirectionForward = transform.forward;
+        Vector3 mirrorLaserDirectionRight = Quaternion.Euler(0, 90, 0) * dir;
+        Vector3 mirrorLaserDirectionForward = dir;
 
         shootLaser(transform.position, mirrorLaserDirectionRight);
         shootLaser(transform.position, mirrorLaserDirectionForward);
