@@ -8,7 +8,19 @@ public class LaserMirror : LaserObject
     {
         base.hitLaser(dir);
 
-        Vector3 mirrorLaserDirection = Quaternion.Euler(0, 90, 0) * dir;
+        float dotProduct = Vector3.Dot(transform.forward, dir);
+
+        Vector3 mirrorLaserDirection;
+
+        if (Mathf.Approximately(dotProduct, 0f))
+        {
+            mirrorLaserDirection = -transform.right;
+        }
+        else
+        {
+            mirrorLaserDirection = transform.right;
+        }
+
         shootLaser(transform.position, mirrorLaserDirection);
     }
 }
