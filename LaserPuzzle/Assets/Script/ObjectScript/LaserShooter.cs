@@ -20,7 +20,10 @@ public class LaserShooter : LaserObject
        GameManager.Instance.LaserStartShoot += shootLaser;
     }
 
-    
+    public void fireLaser(Vector3 origin, Vector3 dir)
+    {
+        shootLaser(origin, dir);
+    }
 
 
 }
