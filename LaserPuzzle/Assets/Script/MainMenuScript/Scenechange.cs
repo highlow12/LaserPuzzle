@@ -7,6 +7,6 @@ public class Scenechange : MonoBehaviour
 {
     public void Scenemove()
     {
-        SceneManager.LoadScene("MainScene");
+        SceneManager.LoadScene("SelectScene");
     }
 }
