@@ -13,6 +13,11 @@ public class ChangeNumber : MonoBehaviour
     {
         textField = GetComponent<TextMeshProUGUI>();
 
+        if(textField == null )
+        {
+            textField = GetComponent<TextMeshProUGUI>();
+        }
+
         if (textField != null)
         {
             textField.text = "Remain chance: " + number;
@@ -25,8 +30,6 @@ public class ChangeNumber : MonoBehaviour
 
     public void ReduceNumber()
     {
-        //textField = GetComponent<Text>();
-
         if (textField != null)
         {
             number--;
