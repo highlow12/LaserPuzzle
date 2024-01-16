@@ -1,30 +1,40 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class ChangeNumber : MonoBehaviour
 {
-    public TextMeshProUGUI textMeshProText; // Reference to the TextMeshPro component
+    public TextMeshProUGUI textField;
+    public int number = 5;
 
     void Start()
     {
-        // Example of changing text during startup
-        ChangeTextValue("New Text Value");
-    }
+        textField = GetComponent<TextMeshProUGUI>();
 
-    // Method to change the text
-    void ChangeTextValue(string newText)
-    {
-        // Check if the TextMeshPro component is assigned
-        if (textMeshProText != null)
+        if (textField != null)
         {
-            // Change the text value
-            textMeshProText.text = newText;
+            textField.text = "Remain chance: " + number;
         }
         else
         {
-            Debug.LogError("TextMeshPro component is not assigned. Please assign it in the Inspector.");
+            Debug.LogError("Error1");
+        }
+    }
+
+    public void ReduceNumber()
+    {
+        //textField = GetComponent<Text>();
+
+        if (textField != null)
+        {
+            number--;
+            textField.text = "Remain chance: " + number;
+        }
+        else
+        {
+            Debug.LogError("Error2");
         }
     }
 }
