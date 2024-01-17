@@ -1167,7 +1167,7 @@ GameObject:
   - component: {fileID: 438880271}
   - component: {fileID: 438880270}
   m_Layer: 5
-  m_Name: laser (2)
+  m_Name: LaserMirror
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2008,7 +2008,7 @@ GameObject:
   - component: {fileID: 635927401}
   - component: {fileID: 635927400}
   m_Layer: 5
-  m_Name: laser (4)
+  m_Name: LaserPortallIn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3433,7 +3433,7 @@ GameObject:
   - component: {fileID: 1287253665}
   - component: {fileID: 1287253664}
   m_Layer: 5
-  m_Name: laser (3)
+  m_Name: LaserHalfMirror
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3554,7 +3554,7 @@ GameObject:
   - component: {fileID: 1322801976}
   - component: {fileID: 1322801975}
   m_Layer: 5
-  m_Name: laser (5)
+  m_Name: LaserPortalOut
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4970,7 +4970,7 @@ GameObject:
   - component: {fileID: 1786228763}
   - component: {fileID: 1786228762}
   m_Layer: 5
-  m_Name: HelpMenu
+  m_Name: Helppanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5130,7 +5130,7 @@ GameObject:
   - component: {fileID: 1946351418}
   - component: {fileID: 1946351417}
   m_Layer: 5
-  m_Name: laser
+  m_Name: LaserShooter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5603,7 +5603,7 @@ GameObject:
   - component: {fileID: 2039510459}
   - component: {fileID: 2039510458}
   m_Layer: 5
-  m_Name: laser (1)
+  m_Name: LaserRecever
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
