@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5190337436937792981}
   - component: {fileID: 869399784954816255}
   - component: {fileID: 8086998871534643575}
+  - component: {fileID: -606690476824894679}
   m_Layer: 0
   m_Name: LaserHalfMirrorModel
   m_TagString: Untagged
@@ -66,6 +67,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canMove: 0
   isSelected: 0
+--- !u!65 &-606690476824894679
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5111158604898510669}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.1, y: 1, z: 0.1}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1 &8467936987368560642
 GameObject:
   m_ObjectHideFlags: 0

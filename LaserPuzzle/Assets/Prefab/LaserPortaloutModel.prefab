@@ -94,6 +94,7 @@ GameObject:
   - component: {fileID: 2644051256435612608}
   - component: {fileID: 8656587000941373951}
   - component: {fileID: 7976564306573688820}
+  - component: {fileID: -265968331849405453}
   m_Layer: 0
   m_Name: LaserPortaloutModel
   m_TagString: Untagged
@@ -149,6 +150,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canMove: 0
   isSelected: 0
+--- !u!65 &-265968331849405453
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3973752811441503661}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.1, y: 1, z: 0.1}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1 &5668678586513635608
 GameObject:
   m_ObjectHideFlags: 0

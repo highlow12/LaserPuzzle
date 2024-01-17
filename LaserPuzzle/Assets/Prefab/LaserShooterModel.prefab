@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4935867517959336141}
   - component: {fileID: 4485537085098639686}
   - component: {fileID: 1236660829669082632}
+  - component: {fileID: 3177853288909077680}
   m_Layer: 0
   m_Name: LaserShooterModel
   m_TagString: Untagged
@@ -66,6 +67,27 @@ MonoBehaviour:
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
+--- !u!65 &3177853288909077680
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2049722203640776249}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.1, y: 1, z: 0.1}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1 &3805017047195413110
 GameObject:
   m_ObjectHideFlags: 0
