@@ -52,7 +52,7 @@ public class LaserManager : MonoBehaviour
         
 
         laser.position = origin + dir * 0.5f + Vector3.up* laserOffset;
-        Debug.Log(laser.position);
+        //Debug.Log(laser.position);
         var i = dir.x + dir.z;
         laser.localScale = new Vector3(laser.localScale.x, laser.localScale.y, Mathf.Abs(i));
 
