@@ -10,7 +10,11 @@ public class LaserRecever : LaserObject
     Material frontMat;
     protected override void Start()
     {
-        frontMat = transform.GetChild(1).GetComponent<MeshRenderer>().material;
+        if (transform.childCount >2)
+        {
+            frontMat = transform.GetChild(1).GetComponent<MeshRenderer>().material;
+        }
+        
 
         GameManager.Instance.addRecever();
 
