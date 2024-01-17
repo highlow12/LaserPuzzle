@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class LaserRecever : LaserObject
 {
-    public Material originalMat;
-    public Material changeMat;
+    //public Material originalMat;
+    //public Material changeMat;
 
     Material frontMat;
     protected override void Start()
@@ -19,7 +19,7 @@ public class LaserRecever : LaserObject
 
     public override void hitLaser(Vector3 dir)
     {
-        if (/*dir - transform.forward == Vector3.zero */ dir + transform.forward == Vector3.zero)
+       /* if (/*dir - transform.forward == Vector3.zero *//* dir + transform.forward == Vector3.zero)
         {
             Debug.Log("receve");
             GameManager.Instance.laserReceve();
@@ -29,7 +29,7 @@ public class LaserRecever : LaserObject
         else
         {
             transform.GetChild(1).GetComponent<MeshRenderer>().material = originalMat;
-        }
+        }*/
     }
 
     // Update is called once per frame
