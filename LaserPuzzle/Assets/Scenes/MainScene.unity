@@ -8193,6 +8193,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: LaserShooterModel
       objectReference: {fileID: 0}
+    - target: {fileID: 3177853288909077680, guid: 11f085328026e474a9691345c7950aa7, type: 3}
+      propertyPath: m_IncludeLayers.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3177853288909077680, guid: 11f085328026e474a9691345c7950aa7, type: 3}
+      propertyPath: m_LayerOverridePriority
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4935867517959336141, guid: 11f085328026e474a9691345c7950aa7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4

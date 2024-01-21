@@ -99,6 +99,7 @@ GameObject:
   - component: {fileID: 6594526113600248502}
   - component: {fileID: 1918964801338812188}
   - component: {fileID: -1397303608951289006}
+  - component: {fileID: 4678455087959568610}
   m_Layer: 0
   m_Name: LaserMonster2Model
   m_TagString: Untagged
@@ -154,6 +155,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canMove: 0
   isSelected: 0
+  outSelectColor: {r: 1, g: 1, b: 1, a: 1}
+  onSelectColor: {r: 0, g: 1, b: 0, a: 1}
 --- !u!65 &-1397303608951289006
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -175,3 +178,24 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.1, y: 1, z: 0.1}
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!65 &4678455087959568610
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4053304784460187968}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1.1, z: 1}
+  m_Center: {x: 0, y: 0.61, z: 0}
