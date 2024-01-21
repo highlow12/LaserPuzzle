@@ -8,12 +8,22 @@ public abstract class GridObject : MonoBehaviour
     public bool canMove = false;
     public bool isSelected = false;
 
+    Outline outline;
+
+    public Color outSelectColor = Color.white;
+    public Color onSelectColor = Color.green;
+
     private void Awake()
     {
         if (!canMove)
         {
             isSelected = false;
         }
+
+        outline = GetComponent<Outline>();
+        outline.OutlineMode = Outline.Mode.OutlineVisible;
+        //outline.enabled = false;
+        outline.OutlineColor = outSelectColor;
     }
 
     protected void keyboardMove()
@@ -95,6 +105,18 @@ public abstract class GridObject : MonoBehaviour
         gridSnap();
         //angleSnap();
         keyboardMove();
+    }
+
+    public void OnSelected()
+    {
+        //outline.enabled = true;
+        outline.OutlineColor = onSelectColor;
+    }
+
+    public void OutSelected()
+    {
+        //outline.enabled = false;
+        outline.OutlineColor = outSelectColor;
     }
 
 }

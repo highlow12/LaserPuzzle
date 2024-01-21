@@ -11,6 +11,9 @@ public class GameManager : MonoBehaviour
 
     int allReceverNum = 0;
     int laserRecevedNum = 0;
+
+    GameObject nowSelectedObject = null;
+
     void Awake()
     {
         if (instance == null)
@@ -68,6 +71,35 @@ public class GameManager : MonoBehaviour
             laserRecevedNum++;
         }
         
+        if(Input.GetMouseButtonDown(0))
+        {
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+
+            if (Physics.Raycast(ray, out hit))
+            {
+                if (hit.transform.TryGetComponent<GridObject>(out var @object))
+                {
+                    Debug.Log("터치된 오브젝트: " + hit.transform.name);
+
+                    if (nowSelectedObject != @object.gameObject)
+                    {
+                        if (nowSelectedObject != null)
+                            nowSelectedObject.GetComponent<GridObject>().OutSelected();
+                        nowSelectedObject = null;
+
+                        nowSelectedObject = @object.gameObject;
+                        nowSelectedObject.GetComponent<GridObject>().OnSelected();
+                    }
+                }
+                else
+                {
+                    if(nowSelectedObject != null)
+                        nowSelectedObject.GetComponent<GridObject>().OutSelected();
+                    nowSelectedObject = null;
+                }
+            }
+        }
     }
 
 }
