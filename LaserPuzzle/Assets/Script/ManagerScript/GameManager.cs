@@ -80,7 +80,7 @@ public class GameManager : MonoBehaviour
             {
                 if (hit.transform.TryGetComponent<GridObject>(out var @object))
                 {
-                    Debug.Log("터치된 오브젝트: " + hit.transform.name);
+                    //Debug.Log("터치된 오브젝트: " + hit.transform.name);
 
                     if (nowSelectedObject != @object.gameObject)
                     {

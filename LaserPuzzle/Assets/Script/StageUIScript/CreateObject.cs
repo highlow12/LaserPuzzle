@@ -7,6 +7,7 @@ public class CreateObject : MonoBehaviour
 {
     public GameObject objectPrefab; 
     public Button createObject; 
+    public Vector3 createposition = new(3,0,8);
 
     //void Start()
     //{
@@ -15,7 +16,7 @@ public class CreateObject : MonoBehaviour
 
     public void CreateObjectOnClick()
     {
-        InstantiateObject(Vector3.zero);
+        InstantiateObject(createposition);
     }
 
     void InstantiateObject(Vector3 position)
