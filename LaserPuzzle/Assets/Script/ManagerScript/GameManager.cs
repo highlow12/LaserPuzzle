@@ -14,6 +14,8 @@ public class GameManager : MonoBehaviour
 
     GameObject nowSelectedObject = null;
 
+    public GameObject arrowUi = null;
+
     void Awake()
     {
         if (instance == null)
@@ -73,10 +75,8 @@ public class GameManager : MonoBehaviour
         
         if(Input.GetMouseButtonDown(0))
         {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-
-            if (Physics.Raycast(ray, out hit))
+            
+            if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out var hit))
             {
                 if (hit.transform.TryGetComponent<GridObject>(out var @object))
                 {
@@ -86,6 +86,7 @@ public class GameManager : MonoBehaviour
                     {
                         if (nowSelectedObject != null)
                             nowSelectedObject.GetComponent<GridObject>().OutSelected();
+
                         nowSelectedObject = null;
 
                         nowSelectedObject = @object.gameObject;
@@ -96,10 +97,27 @@ public class GameManager : MonoBehaviour
                 {
                     if(nowSelectedObject != null)
                         nowSelectedObject.GetComponent<GridObject>().OutSelected();
+
                     nowSelectedObject = null;
                 }
             }
+
+            
+        }
+
+        if (nowSelectedObject != null)
+        {
+            arrowUi.transform.position = nowSelectedObject.transform.position;
+            arrowUi.transform.rotation = nowSelectedObject.transform.rotation;
+
+            arrowUi.SetActive(true);
+        }
+        else
+        {
+            arrowUi.SetActive(false);
         }
     }
+
+    
 
 }
