@@ -13,6 +13,8 @@ public abstract class GridObject : MonoBehaviour
     public Color outSelectColor = Color.white;
     public Color onSelectColor = Color.green;
 
+    public float[] snapAngles = { 0f, 90f, 180f, 270f };
+
     private void Awake()
     {
         if (!canMove)
@@ -32,78 +34,62 @@ public abstract class GridObject : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
             {
-                //-x,-z로 이동
-                transform.position = transform.position + Vector3.left + Vector3.back;
+                transform.position += transform.forward;
             }
             else if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
             {
-                //+x으로 이동
-                transform.position = transform.position + Vector3.right;
+                transform.Rotate(0, 90, 0);
             }
             else if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
             {
-                //+x,+z로 이동
-                transform.position = transform.position + Vector3.right + Vector3.forward;
+                transform.position -= transform.forward;
             }
             else if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
             {
-                //+z으로 이동
-                transform.position = transform.position + Vector3.forward;
+                transform.Rotate(0, -90, 0);
             }
 
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                transform.localEulerAngles = transform.localEulerAngles + new Vector3(0, 90, 0);
-            }
-            else if (Input.GetKeyDown(KeyCode.Q))
-            {
-                transform.localEulerAngles = transform.localEulerAngles + new Vector3(0, -90, 0);
-            }
+            
         }
     }
 
-    protected void DragAndDropMove() 
-    {
-        if (isSelected && canMove)
-        {
-            //나중에 구현
-        }
-    }
+    
 
     protected void gridSnap()
     {
-        transform.position = 
-            new Vector3(Mathf.Round(transform.position.x),0, Mathf.Round(transform.position.z));
+        transform.position = new Vector3(Mathf.Round(transform.position.x),0, Mathf.Round(transform.position.z));
     }
 
     protected void angleSnap()
     {
-        var angle = transform.eulerAngles.y;
+        float currentAngle = transform.eulerAngles.y;
 
-        if (angle < 45 || angle >= 315)
+        // 스냅할 각도 값들
+        
+
+        // 각도 스냅 로직
+        float closestSnapAngle = snapAngles[0];
+        float minDifference = Mathf.Abs(currentAngle - snapAngles[0]);
+
+        foreach (float snapAngle in snapAngles)
         {
-            angle = 0;
-        }
-        else if (angle < 135 || angle >= 45)
-        {
-            angle = 90;
-        }
-        else if (angle < 225 || angle >= 135)
-        {
-            angle = 180;
-        }
-        else if (angle < 315 || angle >= 225)
-        {
-            angle = 270;
+            float angleDifference = Mathf.Abs(currentAngle - snapAngle);
+
+            if (angleDifference < minDifference)
+            {
+                minDifference = angleDifference;
+                closestSnapAngle = snapAngle;
+            }
         }
 
-        transform.rotation = Quaternion.Euler(0, angle, 0);
+        // 오브젝트를 가장 가까운 스냅 각도로 회전시킴
+        transform.eulerAngles = new Vector3(transform.eulerAngles.x, closestSnapAngle, transform.eulerAngles.z);
     }
 
     protected virtual void Update()
     {
         gridSnap();
-        //angleSnap();
+        angleSnap();
         keyboardMove();
     }
 
@@ -111,7 +97,9 @@ public abstract class GridObject : MonoBehaviour
     {
         //outline.enabled = true;
         outline.OutlineColor = onSelectColor;
-        outline.OutlineWidth = 2;
+        outline.OutlineWidth = 5;
+
+        isSelected = true;
     }
 
     public void OutSelected()
@@ -119,6 +107,15 @@ public abstract class GridObject : MonoBehaviour
         //outline.enabled = false;
         outline.OutlineColor = outSelectColor;
         outline.OutlineWidth = 1;
+
+        isSelected = false;
     }
 
+    protected void DragAndDropMove()
+    {
+        if (isSelected && canMove)
+        {
+            //나중에 구현
+        }
+    }
 }

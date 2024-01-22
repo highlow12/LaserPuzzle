@@ -17,6 +17,8 @@ public class LaserRecever : LaserObject
 
         GameManager.Instance.addRecever();
 
+        transform.Rotate(0, Random.Range(270, 450), 0);
+
           
     }
 
