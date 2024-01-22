@@ -111,12 +111,14 @@ public abstract class GridObject : MonoBehaviour
     {
         //outline.enabled = true;
         outline.OutlineColor = onSelectColor;
+        outline.OutlineWidth = 2;
     }
 
     public void OutSelected()
     {
         //outline.enabled = false;
         outline.OutlineColor = outSelectColor;
+        outline.OutlineWidth = 1;
     }
 
 }
