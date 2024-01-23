@@ -7,6 +7,7 @@ public abstract class GridObject : MonoBehaviour
 {
     public bool canMove = false;
     public bool isSelected = false;
+    public bool cantOutSelect = false;
 
     Outline outline;
 
@@ -49,15 +50,15 @@ public abstract class GridObject : MonoBehaviour
                 transform.Rotate(0, +90, 0);
             }
 
-            
+
         }
     }
 
-    
+
 
     protected void gridSnap()
     {
-        transform.position = new Vector3(Mathf.Round(transform.position.x),0, Mathf.Round(transform.position.z));
+        transform.position = new Vector3(Mathf.Round(transform.position.x), 0, Mathf.Round(transform.position.z));
     }
 
     protected void angleSnap()
@@ -65,7 +66,7 @@ public abstract class GridObject : MonoBehaviour
         float currentAngle = transform.eulerAngles.y;
 
         // 스냅할 각도 값들
-        
+
 
         // 각도 스냅 로직
         float closestSnapAngle = snapAngles[0];
@@ -117,5 +118,16 @@ public abstract class GridObject : MonoBehaviour
         {
             //나중에 구현
         }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        cantOutSelect = true;
+        Debug.Log("1");
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        cantOutSelect = false;
     }
 }
