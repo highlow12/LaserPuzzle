@@ -7,10 +7,7 @@ public class ClearUIScript : MonoBehaviour
 {
     public GameObject ClearUI;
 
-    void Start()
-    {
-        ClearUI.SetActive(false);
-    }
+    
 
     void Update()
     {
@@ -23,13 +20,13 @@ public class ClearUIScript : MonoBehaviour
     public void nextLevel()
     {
         hideClearUI();
-        SceneManager.LoadScene(/*다음레벨 신*/"StageUI");
+        SceneManager.LoadScene(GameManager.Instance.NextStage);
     }
 
     public void tryAgain()
     {
         hideClearUI();
-        SceneManager.LoadScene(/*같은레벨 신*/"StageUI");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void goMain()

@@ -16,6 +16,8 @@ public class GameManager : MonoBehaviour
 
     public GameObject arrowUi = null;
 
+    public string NextStage = "";
+
     void Awake()
     {
         if (instance == null)
@@ -24,7 +26,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            Destroy(this.gameObject);
+            Destroy(gameObject);
         }
     }
 
@@ -60,9 +62,46 @@ public class GameManager : MonoBehaviour
         LaserStartShoot(Vector3.zero, Vector3.zero);
     }
 
+    public void SetNowSelectedObject(Transform hit)
+    {
+        if (hit.transform.TryGetComponent<GridObject>(out var @object))
+        {
+            //Debug.Log("터치된 오브젝트: " + hit.transform.name);
+
+            if (nowSelectedObject != @object.gameObject)
+            {
+                if (nowSelectedObject != null)
+                    nowSelectedObject.GetComponent<GridObject>().OutSelected();
+
+                nowSelectedObject = null;
+
+                nowSelectedObject = @object.gameObject;
+                nowSelectedObject.GetComponent<GridObject>().OnSelected();
+            }
+        }
+        else
+        {
+            ReleseNowSelectedobject();
+        }
+    }
+
+    private void ReleseNowSelectedobject()
+    {
+        if (!nowSelectedObject.GetComponent<GridObject>().cantOutSelect)
+        {
+            if (nowSelectedObject != null)
+                nowSelectedObject.GetComponent<GridObject>().OutSelected();
+
+            nowSelectedObject = null;
+        }
+    }
+
     void clearGame()
     {
         Debug.Log("GameClear");
+        UIManager.Instance.ClearUI.SetActive(true);
+        UIManager.Instance.StageUI.SetActive(false);
+        UIManager.Instance.MenuUI.SetActive(false);
     }
 
     private void Update()
@@ -79,28 +118,7 @@ public class GameManager : MonoBehaviour
             
             if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out var hit))
             {
-                if (hit.transform.TryGetComponent<GridObject>(out var @object))
-                {
-                    //Debug.Log("터치된 오브젝트: " + hit.transform.name);
-
-                    if (nowSelectedObject != @object.gameObject)
-                    {
-                        if (nowSelectedObject != null)
-                            nowSelectedObject.GetComponent<GridObject>().OutSelected();
-
-                        nowSelectedObject = null;
-
-                        nowSelectedObject = @object.gameObject;
-                        nowSelectedObject.GetComponent<GridObject>().OnSelected();
-                    }
-                }
-                else
-                {
-                    if(nowSelectedObject != null)
-                        nowSelectedObject.GetComponent<GridObject>().OutSelected();
-
-                    nowSelectedObject = null;
-                }
+                SetNowSelectedObject(hit.transform);
             }
 
             
@@ -108,13 +126,7 @@ public class GameManager : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.Escape))
         {
-            if (!nowSelectedObject.GetComponent<GridObject>().cantOutSelect)
-            {
-                if (nowSelectedObject != null)
-                    nowSelectedObject.GetComponent<GridObject>().OutSelected();
-
-                nowSelectedObject = null;
-            }
+            ReleseNowSelectedobject();
         }
 
         if (nowSelectedObject != null)
@@ -129,7 +141,4 @@ public class GameManager : MonoBehaviour
             arrowUi.SetActive(false);
         }
     }
-
-    
-
 }
