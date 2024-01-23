@@ -46,11 +46,13 @@ public class GameManager : MonoBehaviour
     public void addRecever()
     {
         allReceverNum++;
+        Debug.Log(allReceverNum);
     }
 
     public void laserReceve()
     {
         laserRecevedNum++;
+        Debug.Log(laserRecevedNum);
     }
 
     public void laserStart()//이 함수를 실행시키면 모든 레이저 슈터가 레이저를 발사한다
@@ -106,10 +108,13 @@ public class GameManager : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.Escape))
         {
-            if (nowSelectedObject != null)
-                nowSelectedObject.GetComponent<GridObject>().OutSelected();
+            if (!nowSelectedObject.GetComponent<GridObject>().cantOutSelect)
+            {
+                if (nowSelectedObject != null)
+                    nowSelectedObject.GetComponent<GridObject>().OutSelected();
 
-            nowSelectedObject = null;
+                nowSelectedObject = null;
+            }
         }
 
         if (nowSelectedObject != null)

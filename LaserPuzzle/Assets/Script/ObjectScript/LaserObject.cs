@@ -9,9 +9,9 @@ public class LaserObject : GridObject
     protected virtual void shootLaser(Vector3 origin, Vector3 dir)
     {
         
-        Debug.DrawRay(origin + Vector3.up/2 /*+ dir.normalized * 0.25f*/, dir * 9, Color.green, 10000);
+        Debug.DrawRay(origin + Vector3.up /*+ dir.normalized * 0.25f*/, dir * 9, Color.green, 10000);
         
-        if (Physics.Raycast(origin + Vector3.up/2 /*+ dir.normalized * 0.25f*/, dir,out hit, 9.75f))
+        if (Physics.Raycast(origin + Vector3.up /*+ dir.normalized * 0.25f*/, dir,out hit, 9.75f))
         {
             
             LaserManager.Instance.shootLaser(origin, hit.transform.position);
