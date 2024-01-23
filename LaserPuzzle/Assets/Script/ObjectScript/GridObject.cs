@@ -38,7 +38,7 @@ public abstract class GridObject : MonoBehaviour
             }
             else if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
             {
-                transform.Rotate(0, 90, 0);
+                transform.Rotate(0, -90, 0);
             }
             else if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
             {
@@ -46,7 +46,7 @@ public abstract class GridObject : MonoBehaviour
             }
             else if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
             {
-                transform.Rotate(0, -90, 0);
+                transform.Rotate(0, +90, 0);
             }
 
             

@@ -104,6 +104,13 @@ public class GameManager : MonoBehaviour
 
             
         }
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (nowSelectedObject != null)
+                nowSelectedObject.GetComponent<GridObject>().OutSelected();
+
+            nowSelectedObject = null;
+        }
 
         if (nowSelectedObject != null)
         {
