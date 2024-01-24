@@ -8,7 +8,15 @@ public class LaserMirror : LaserObject
     {
         base.hitLaser(dir);
 
-        float dotProduct = Vector3.Dot(transform.forward, dir);
+        if (dir.normalized == transform.forward * -1)
+        {
+            shootLaser(transform.position, transform.right * -1);
+        }
+        else if(dir.normalized == transform.right)
+        {
+            shootLaser(transform.position, transform.forward);
+        }
+        /*float dotProduct = Vector3.Dot(transform.forward, dir);
 
         Vector3 mirrorLaserDirection;
 
@@ -21,6 +29,6 @@ public class LaserMirror : LaserObject
             mirrorLaserDirection = transform.right;
         }
 
-        shootLaser(transform.position, mirrorLaserDirection);
+        shootLaser(transform.position, mirrorLaserDirection);*/
     }
 }

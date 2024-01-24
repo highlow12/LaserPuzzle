@@ -8,22 +8,15 @@ public class LaserHalfMirror : LaserObject
     {
         base.hitLaser(dir);
 
-        float dotProduct = Vector3.Dot(transform.forward, dir);
-
-        Vector3 mirrorLaserDirection;
-        Vector3 mirrorLaserDirectionForward = dir;
-
-        if (Mathf.Approximately(dotProduct, 0f))
+        if (dir.normalized == transform.forward * -1)
         {
-            mirrorLaserDirection = -transform.right;
-
+            shootLaser(transform.position, transform.right * -1);
+            shootLaser(transform.position, dir);
         }
-        else
+        else if (dir.normalized == transform.right)
         {
-            mirrorLaserDirection = transform.right;
+            shootLaser(transform.position, transform.forward);
+            shootLaser(transform.position, dir);
         }
-
-        shootLaser(transform.position, mirrorLaserDirection);
-        shootLaser(transform.position, mirrorLaserDirectionForward);
     }
 }
