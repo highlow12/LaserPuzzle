@@ -14,12 +14,12 @@ public class LaserObject : GridObject
         if (Physics.Raycast(origin + Vector3.up /*+ dir.normalized * 0.25f*/, dir,out hit, 9.75f))
         {
             
-            LaserManager.Instance.shootLaser(origin, hit.transform.position);
+            LaserManager.Instance.shootLaser(origin, hit);
             //Debug.Log(hit.transform.position);
-            if (hit.collider.TryGetComponent(out LaserObject laser))
+            /*if (hit.collider.TryGetComponent(out LaserObject laser))
             {
                 laser.hitLaser(dir);
-            }
+            }*/
         }
         else
         {
