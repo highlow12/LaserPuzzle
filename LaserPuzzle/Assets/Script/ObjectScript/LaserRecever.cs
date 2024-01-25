@@ -36,6 +36,9 @@ public class LaserRecever : LaserObject
          {
              transform.GetChild(1).GetComponent<MeshRenderer>().material = originalMat;
          }*/
+
+        EffectManager.Instance.GetExpolsion(transform.position);
+        gameObject.SetActive(false);
     }
 
     // Update is called once per frame

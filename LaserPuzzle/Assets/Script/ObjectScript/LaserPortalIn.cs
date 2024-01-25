@@ -16,7 +16,7 @@ public class LaserPortalIn : LaserObject
                 connectedPortal.ReceiveLaser(dir);
             }
             // 레이저가 이 포털에 충돌하면 연결된 포털로 레이저를 전송
-                connectedPortal.ReceiveLaser(dir);
+                
         }
     }
 }
