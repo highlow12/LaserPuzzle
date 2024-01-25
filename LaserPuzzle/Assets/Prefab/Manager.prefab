@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf51f4eb3b76ed449a0c6ff30c5b7c1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  arrowUi: {fileID: 0}
+  arrowUi: {fileID: 4147213773122066878, guid: defc5767eed54b447ad709fd2fec0c25, type: 3}
   NextStage: Stage 2
 --- !u!114 &2495135498286984524
 MonoBehaviour:

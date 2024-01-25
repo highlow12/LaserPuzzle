@@ -33,6 +33,8 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         StageReset += stageReset;
+
+        arrowUi = GameObject.Find("arrow 3dui");
     }
 
     public static GameManager Instance 
