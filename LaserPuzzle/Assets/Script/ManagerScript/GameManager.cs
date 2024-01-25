@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     static GameManager instance = null;
 
     public Action<Vector3, Vector3> LaserStartShoot; //레이저 슈터가 레이저를 쏘게 하는 델리게이트
+    public Action StageReset;
 
     int allReceverNum = 0;
     int laserRecevedNum = 0;
@@ -28,6 +29,10 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+    private void Start()
+    {
+        StageReset += stageReset;
     }
 
     public static GameManager Instance 
@@ -59,6 +64,7 @@ public class GameManager : MonoBehaviour
 
     public void laserStart()//이 함수를 실행시키면 모든 레이저 슈터가 레이저를 발사한다
     {
+        StageReset();
         LaserStartShoot(Vector3.zero, Vector3.zero);
     }
 
@@ -140,5 +146,11 @@ public class GameManager : MonoBehaviour
         {
             arrowUi.SetActive(false);
         }
+    }
+
+    void stageReset()
+    {
+        Debug.Log("Reset");
+        laserRecevedNum = 0;
     }
 }

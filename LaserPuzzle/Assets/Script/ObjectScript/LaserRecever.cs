@@ -6,38 +6,23 @@ public class LaserRecever : LaserObject
 {
     //public Material originalMat;
     //public Material changeMat;
-
-    Material frontMat;
+    GameObject effect = null;
+    
     protected override void Start()
     {
-        
-            //frontMat = transform.GetChild(1).GetComponent<MeshRenderer>().material;
-        
-        
-
         GameManager.Instance.addRecever();
 
-        transform.Rotate(0, Random.Range(270, 450), 0);
+        transform.Rotate(0, Random.Range(0, 360), 0);
 
-          
+        GameManager.Instance.StageReset += _Reset;
     }
 
     public override void hitLaser(Vector3 dir)
     {
         Debug.Log("receve");
         GameManager.Instance.laserReceve();
-        /* if (/*dir - transform.forward == Vector3.zero *//* dir + transform.forward == Vector3.zero)
-         {
 
-
-             transform.GetChild(1).GetComponent<MeshRenderer>().material = changeMat;
-         }
-         else
-         {
-             transform.GetChild(1).GetComponent<MeshRenderer>().material = originalMat;
-         }*/
-
-        EffectManager.Instance.GetExpolsion(transform.position);
+        effect = EffectManager.Instance.GetExpolsion(transform.position);
         gameObject.SetActive(false);
     }
 
@@ -45,5 +30,13 @@ public class LaserRecever : LaserObject
     protected override void Update()
     {
         base.Update();
+    }
+
+    void _Reset()
+    {
+        Destroy(effect);
+        effect = null;
+
+        gameObject.SetActive(true);
     }
 }

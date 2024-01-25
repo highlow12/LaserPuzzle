@@ -11,7 +11,7 @@ public class LaserManager : MonoBehaviour
 
     public GameObject Laser;
 
-    List<Transform> lasers = new List<Transform>();
+    List<Transform> lasers = new();
 
     public float laserOffset = 0.5f;
 
@@ -46,7 +46,12 @@ public class LaserManager : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
+    private void Start()
+    {
+        lasers.Clear();
+        GameManager.Instance.StageReset += stageReset;
 
+    }
     public void shootLaser(Vector3 origin, RaycastHit hit)
     {
         //Debug.Log(target);
@@ -137,27 +142,7 @@ public class LaserManager : MonoBehaviour
 
     }
 
-    private void showLasers()
-    {
-        foreach (Transform t in lasers) 
-        {
-            t.gameObject.SetActive(true);
-        }
-    }
-    private void Start()
-    {
-        lasers.Clear();
-    }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Z))
-        {
-
-        }
-    }
-
-    public void LaserClear(float delay)
+    public void LasersClear(float delay)
     {
         foreach (var t in lasers)
         {
@@ -170,10 +155,19 @@ public class LaserManager : MonoBehaviour
 
     IEnumerator IclearLasers(float delay)
     {
-        
-
-        LaserClear(delay);
+        LasersClear(delay);
         yield return null;
+    }
+
+    void stageReset()
+    {
+        foreach (var t in lasers)
+        {
+            t.DOKill();
+            Destroy(t.gameObject);
+        }
+
+        lasers.Clear();
     }
 
 }

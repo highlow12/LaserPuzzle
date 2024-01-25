@@ -36,13 +36,15 @@ public class EffectManager : MonoBehaviour
         }
     }
 
-    public void GetExpolsion(Vector3 pos)
+    public GameObject GetExpolsion(Vector3 pos)
     {
         var effect = Instantiate(particleSystems);
         effect.transform.position = pos;
         //var effect2 = Instantiate(smokeEffect);
         //Destroy(effect, time);
         //Destroy(effect2, time);
+
+        return effect;
     }
 
     
