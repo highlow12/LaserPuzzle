@@ -11,10 +11,10 @@ public class LaserPortalIn : LaserObject
         if (connectedPortal != null)
         {
             //Debug.Log((dir.normalized - transform.forward).normalized);
-            if(
-                (dir.normalized - transform.forward).normalized == Vector3.zero 
-                || (dir.normalized - transform.forward).normalized== Vector3.right
-                || (dir.normalized - transform.forward).normalized == Vector3.right*-1)
+            if (transform.forward == dir.normalized || transform.forward == dir.normalized * -1)
+            {
+                connectedPortal.ReceiveLaser(dir);
+            }
             // 레이저가 이 포털에 충돌하면 연결된 포털로 레이저를 전송
                 connectedPortal.ReceiveLaser(dir);
         }
