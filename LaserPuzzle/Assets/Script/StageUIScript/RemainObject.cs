@@ -7,25 +7,20 @@ using TMPro;
 public class RemainObject : MonoBehaviour
 {
     public TextMeshProUGUI objectField;
-    public int Object = 3;
+
+    public int readMirror = 0;// 0 = 거울, 1 = 반거울
+    int Object = 3;
 
     void Start()
     {
         objectField = GetComponent<TextMeshProUGUI>();
+        
+        objectField.text = "" + GameManager.Instance.mirrors[readMirror];
+    }
 
-        if (objectField == null)
-        {
-            objectField = GetComponent<TextMeshProUGUI>();
-        }
-
-        if (objectField != null)
-        {
-            objectField.text = "" + Object;
-        }
-        else
-        {
-            Debug.LogError("Error1");
-        }
+    private void Update()
+    {
+        objectField.text = "" + GameManager.Instance.mirrors[readMirror];
     }
 
     public void ReduceObject()

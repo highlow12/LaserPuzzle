@@ -5383,6 +5383,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LaserMirrorModel (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 317586228367561923, guid: 88af6035a1aaa1743a44f5498bfd53c7, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4621445452278269620, guid: 88af6035a1aaa1743a44f5498bfd53c7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.1308882

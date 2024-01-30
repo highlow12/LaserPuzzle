@@ -6,8 +6,11 @@ public class ShootButtenScript : MonoBehaviour
 {
     public void shootButten()
     {
-        Debug.Log("shoot");
-        GameManager.Instance.StageReset();
-        GameManager.Instance.laserStart();
+        if (GameManager.Instance.Remainchance > 0)
+        {
+            Debug.Log("shoot");
+            GameManager.Instance.StageReset();
+            GameManager.Instance.laserStart();
+        }
     }
 }

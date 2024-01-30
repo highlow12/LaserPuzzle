@@ -21,6 +21,9 @@ public class GameManager : MonoBehaviour
 
     public string NextStage = "";
 
+
+    public int[] mirrors = new int[2]{ 0, 0 };
+    public int Remainchance = 5;
     void Awake()
     {
         if (instance == null)

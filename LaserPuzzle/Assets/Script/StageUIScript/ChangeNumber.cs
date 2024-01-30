@@ -20,7 +20,7 @@ public class ChangeNumber : MonoBehaviour
 
         if (textField != null)
         {
-            textField.text = "Remain chance: " + number;
+            textField.text = "Remain chance: " + GameManager.Instance.Remainchance;
         }
         else
         {
@@ -32,8 +32,11 @@ public class ChangeNumber : MonoBehaviour
     {
         if (textField != null)
         {
-            number--;
-            textField.text = "Remain chance: " + number;
+            if (GameManager.Instance.Remainchance > 0)
+            {
+                GameManager.Instance.Remainchance--;
+                textField.text = "Remain chance: " + GameManager.Instance.Remainchance;
+            }
         }
         else
         {
