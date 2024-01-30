@@ -295,7 +295,6 @@ GameObject:
   - component: {fileID: 2180464188578978488}
   - component: {fileID: 2719366911668189648}
   - component: {fileID: 6134928663639020827}
-  - component: {fileID: 5363566450217285536}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -405,9 +404,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: laserStart
+      - m_Target: {fileID: 3574046889485410098}
+        m_TargetAssemblyTypeName: ShootButtenScript, Assembly-CSharp
+        m_MethodName: shootButten
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -429,18 +428,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 1
---- !u!114 &5363566450217285536
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2177582961451119885}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6662eeb4c0c8a94198ff2ca52b9e13b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2301785553779361171
 GameObject:
   m_ObjectHideFlags: 0
@@ -1195,6 +1182,7 @@ GameObject:
   - component: {fileID: 8747384384828105330}
   - component: {fileID: 800500840172916382}
   - component: {fileID: 165679019674376185}
+  - component: {fileID: 3574046889485410098}
   m_Layer: 5
   m_Name: Stage UI
   m_TagString: Untagged
@@ -1306,6 +1294,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textField: {fileID: 3676413474609990395}
   number: 5
+--- !u!114 &3574046889485410098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3294473940572913344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6662eeb4c0c8a94198ff2ca52b9e13b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3453008860595906714
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,7 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.SearchService;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -35,6 +37,15 @@ public class GameManager : MonoBehaviour
         StageReset += stageReset;
 
         arrowUi = GameObject.Find("arrow 3dui");
+
+        NextStage = SceneManager.GetActiveScene().name;
+
+        var words = NextStage.Split(' ');
+
+        int num = int.Parse(words[1]);
+        num++;
+
+        NextStage = words[0] + " " + num.ToString();
     }
 
     public static GameManager Instance 
@@ -95,13 +106,17 @@ public class GameManager : MonoBehaviour
 
     private void ReleseNowSelectedobject()
     {
-        if (!nowSelectedObject.GetComponent<GridObject>().cantOutSelect)
+        if (nowSelectedObject != null)
         {
-            if (nowSelectedObject != null)
-                nowSelectedObject.GetComponent<GridObject>().OutSelected();
+            if (!nowSelectedObject.GetComponent<GridObject>().cantOutSelect)
+            {
+                if (nowSelectedObject != null)
+                    nowSelectedObject.GetComponent<GridObject>().OutSelected();
 
-            nowSelectedObject = null;
+                nowSelectedObject = null;
+            }
         }
+        
     }
 
     void clearGame()
@@ -126,6 +141,7 @@ public class GameManager : MonoBehaviour
             
             if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out var hit))
             {
+                
                 SetNowSelectedObject(hit.transform);
             }
 

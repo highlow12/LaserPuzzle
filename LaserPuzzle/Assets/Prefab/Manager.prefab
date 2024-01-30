@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7347729732239833375}
   - component: {fileID: 2495135498286984524}
   - component: {fileID: 3965538511705200763}
+  - component: {fileID: 1155863386169420072}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -80,3 +81,17 @@ MonoBehaviour:
   StageUI: {fileID: 0}
   MenuUI: {fileID: 0}
   ClearUI: {fileID: 0}
+--- !u!114 &1155863386169420072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2775608182911437299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fb1a5270ce990d48ba745eba18dfe01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particleSystems: {fileID: 1828176872806910, guid: 64891a0eb28db934898420d80ca07cb3, type: 3}
+  time: 1

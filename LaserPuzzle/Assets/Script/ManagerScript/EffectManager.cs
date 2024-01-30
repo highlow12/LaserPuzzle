@@ -5,7 +5,7 @@ using UnityEngine;
 public class EffectManager : MonoBehaviour
 {
     public GameObject particleSystems;
-    public GameObject smokeEffect;
+    
     public float time = 1;
 
     static public EffectManager instance;

@@ -2847,6 +2847,22 @@ Transform:
   - {fileID: 2043158578}
   m_Father: {fileID: 1464846734}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &720772321 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3294473940572913344, guid: 84e2bc31becd57f4e9d8ca59a6200c10, type: 3}
+  m_PrefabInstance: {fileID: 1876898905375698857}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &720772327 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3574046889485410098, guid: 84e2bc31becd57f4e9d8ca59a6200c10, type: 3}
+  m_PrefabInstance: {fileID: 1876898905375698857}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 720772321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6662eeb4c0c8a94198ff2ca52b9e13b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &726716420
 GameObject:
   m_ObjectHideFlags: 0
@@ -3002,6 +3018,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Manager
       objectReference: {fileID: 0}
+    - target: {fileID: 3965538511705200763, guid: 5f30bd098c8f6354293fa0c19c368402, type: 3}
+      propertyPath: MenuUI
+      value: 
+      objectReference: {fileID: 386408956}
+    - target: {fileID: 3965538511705200763, guid: 5f30bd098c8f6354293fa0c19c368402, type: 3}
+      propertyPath: ClearUI
+      value: 
+      objectReference: {fileID: 1562656412}
+    - target: {fileID: 3965538511705200763, guid: 5f30bd098c8f6354293fa0c19c368402, type: 3}
+      propertyPath: StageUI
+      value: 
+      objectReference: {fileID: 720772321}
     - target: {fileID: 7126495068927227578, guid: 5f30bd098c8f6354293fa0c19c368402, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -5792,6 +5820,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1558509706}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1562656412 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5394552193985591355, guid: 7b4ccb3f8e0561245891debf489c397a, type: 3}
+  m_PrefabInstance: {fileID: 940302456846390874}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1600928261
 GameObject:
   m_ObjectHideFlags: 0
@@ -8245,9 +8278,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stage UI
       objectReference: {fileID: 0}
+    - target: {fileID: 5884000380297369824, guid: 84e2bc31becd57f4e9d8ca59a6200c10, type: 3}
+      propertyPath: m_VertexColorAlwaysGammaSpace
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6134928663639020827, guid: 84e2bc31becd57f4e9d8ca59a6200c10, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
+      objectReference: {fileID: 720772327}
+    - target: {fileID: 6134928663639020827, guid: 84e2bc31becd57f4e9d8ca59a6200c10, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: shootButten
       objectReference: {fileID: 0}
     - target: {fileID: 6628993469175606084, guid: 84e2bc31becd57f4e9d8ca59a6200c10, type: 3}
       propertyPath: MenuUI
@@ -8514,10 +8555,10 @@ SceneRoots:
   - {fileID: 773187396}
   - {fileID: 4311035515132699470}
   - {fileID: 1600928264}
+  - {fileID: 729847735}
   - {fileID: 1876898905375698857}
   - {fileID: 8563740246433923216}
   - {fileID: 940302456846390874}
   - {fileID: 963708836}
   - {fileID: 2006431411}
   - {fileID: 1479100210}
-  - {fileID: 729847735}
