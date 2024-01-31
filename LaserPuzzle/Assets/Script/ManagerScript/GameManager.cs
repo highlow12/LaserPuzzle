@@ -1,7 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.SearchService;
+//using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
     public string NextStage = "";
 
 
-    public int[] mirrors = new int[2]{ 0, 0 };
+    public int[] mirrors = new int[2]{ 10, 10 };
     public int Remainchance = 5;
     void Awake()
     {
@@ -49,6 +49,7 @@ public class GameManager : MonoBehaviour
         num++;
 
         NextStage = words[0] + " " + num.ToString();
+
     }
 
     public static GameManager Instance 
