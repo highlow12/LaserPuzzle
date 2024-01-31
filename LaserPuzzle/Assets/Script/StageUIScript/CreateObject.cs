@@ -43,6 +43,7 @@ public class CreateObject : MonoBehaviour
                     //Debug.Log(hit.transform.name);
 
                     var init = Instantiate(objectPrefab, position, Quaternion.identity);
+                    init.SetActive(true);
                     init.GetComponent<GridObject>().canMove = true;
 
                     GameManager.Instance.SetNowSelectedObject(init.transform);
