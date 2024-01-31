@@ -36,7 +36,7 @@ public class CreateObject : MonoBehaviour
         {
             
 
-            if (0 != GameManager.Instance.mirrors[i])
+            if (0 < GameManager.Instance.mirrors[i])
             {
                 if (!Physics.SphereCast(position + Vector3.up * 2, 0.5f, Vector3.down, out var _, 1))
                 {
