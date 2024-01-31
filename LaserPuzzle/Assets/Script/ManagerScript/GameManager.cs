@@ -97,8 +97,11 @@ public class GameManager : MonoBehaviour
 
                 nowSelectedObject = null;
 
-                nowSelectedObject = @object.gameObject;
-                nowSelectedObject.GetComponent<GridObject>().OnSelected();
+                if (@object.GetComponent<GridObject>().canMove) 
+                { 
+                    nowSelectedObject = @object.gameObject;
+                    nowSelectedObject.GetComponent<GridObject>().OnSelected();
+                }
             }
         }
         else
