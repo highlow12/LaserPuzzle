@@ -7,29 +7,19 @@ public class VolumeControl : MonoBehaviour
     public Slider bgmVolumeSlider;
     public Slider sfxVolumeSlider;
 
-    private void Start()
+    private void Update()
     {
-        // 초기 값 설정
-        masterVolumeSlider.value = PlayerPrefs.GetFloat("MasterVolume", 1.0f) * 100;
-        bgmVolumeSlider.value = PlayerPrefs.GetFloat("BGMVolume", 1.0f) * 100;
-        sfxVolumeSlider.value = PlayerPrefs.GetFloat("SFXVolume", 1.0f) * 100;
     }
-
-    public void SetMasterVolume(float volume)
+    public void setMasterVolum()
     {
-        AudioManager.Instance.SetMasterVolume(volume / 100.0f);
-        PlayerPrefs.SetFloat("MasterVolume", volume / 100.0f);
+        AudioManager.Instance.updateMasterVolum(masterVolumeSlider.value);
     }
-
-    public void SetBGMVolume(float volume)
+    public void setBgmVolume()
     {
-        AudioManager.Instance.SetBGMVolume(volume / 100.0f);
-        PlayerPrefs.SetFloat("BGMVolume", volume / 100.0f);
+        AudioManager.Instance.updateBgmVolum(bgmVolumeSlider.value);
     }
-
-    public void SetSFXVolume(float volume)
+    public void setsfxVolume()
     {
-        AudioManager.Instance.SetSFXVolume(volume / 100.0f);
-        PlayerPrefs.SetFloat("SFXVolume", volume / 100.0f);
+        AudioManager.Instance.updateSFXVolum(sfxVolumeSlider.value);
     }
 }

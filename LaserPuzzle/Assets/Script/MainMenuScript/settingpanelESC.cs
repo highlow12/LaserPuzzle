@@ -8,7 +8,7 @@ public class settingpanelESC : MonoBehaviour
 
     void Start()
     {
-        settingPanel.SetActive(false);  // 게임이 시작될 때 설정 패널 비활성화
+        //settingPanel.SetActive(false);  // 게임이 시작될 때 설정 패널 비활성화
     }
 
     void Update()

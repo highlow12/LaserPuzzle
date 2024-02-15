@@ -9,7 +9,8 @@ public class MenuSceneChange : MonoBehaviour
 
     void Start()
     {
-        MenuUI.SetActive(false);
+       // MenuUI = GameObject.Find("MenuUI");
+        //MenuUI.SetActive(false);
     }
 
     void Update()
@@ -27,11 +28,13 @@ public class MenuSceneChange : MonoBehaviour
 
     public void ShowMenu()
     {
-        MenuUI.SetActive(true);
+        //MenuUI.SetActive(true);
+        UIManager.Instance.SetMenuUI(true);
     }
 
     public void HideMenu()
     {
-        MenuUI.SetActive(false);
+        UIManager.Instance.SetMenuUI(false);
+        //MenuUI.SetActive(false);
     }
 }

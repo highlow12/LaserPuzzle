@@ -54,6 +54,7 @@ public class LaserManager : MonoBehaviour
     }
     public void shootLaser(Vector3 origin, RaycastHit hit)
     {
+        AudioManager.Instance.PlaySFX(AudioManager.Sfx.laser);
         //Debug.Log(target);
         Vector3 target = hit.transform.position;
 
@@ -101,6 +102,7 @@ public class LaserManager : MonoBehaviour
 
     public void shootLaser(Vector3 origin, Vector3 target)
     {
+        AudioManager.Instance.PlaySFX(AudioManager.Sfx.laser);
         //Debug.Log(target);
 
         var laser = Instantiate(Laser).transform;

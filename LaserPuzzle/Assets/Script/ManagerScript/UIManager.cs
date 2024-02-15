@@ -42,5 +42,15 @@ public class UIManager : MonoBehaviour
         ClearUI.SetActive(state);
         //ClearUI.GetComponent<ClearUIScript>().showClearUI();
     }
+    public void SetStageUI(bool state)
+    {
+        StageUI.SetActive(state);
+        //ClearUI.GetComponent<ClearUIScript>().showClearUI();
+    }
+    public void SetMenuUI(bool state)
+    {
+        MenuUI.SetActive(state);
+        //ClearUI.GetComponent<ClearUIScript>().showClearUI();
+    }
 
 }

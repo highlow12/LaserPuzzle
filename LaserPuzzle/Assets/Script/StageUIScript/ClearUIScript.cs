@@ -14,6 +14,7 @@ public class ClearUIScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             hideClearUI();
+            
         }
     }
 
@@ -43,6 +44,7 @@ public class ClearUIScript : MonoBehaviour
     public void hideClearUI()
     {
         ClearUI.SetActive(false);
+        AudioManager.Instance.PlaySFX(AudioManager.Sfx.Click);
     }
 
     

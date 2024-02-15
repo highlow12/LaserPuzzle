@@ -20,6 +20,7 @@ public class ret : MonoBehaviour
 
     public void ret_()
     {
+        AudioManager.Instance.PlaySFX(AudioManager.Sfx.Click);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

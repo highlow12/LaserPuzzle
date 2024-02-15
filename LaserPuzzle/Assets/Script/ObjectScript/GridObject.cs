@@ -36,21 +36,25 @@ public abstract class GridObject : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
             {
                 transform.position += transform.forward;
+                AudioManager.Instance.PlaySFX(AudioManager.Sfx.objMove);
             }
             else if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
             {
                 transform.Rotate(0, -90, 0);
+                AudioManager.Instance.PlaySFX(AudioManager.Sfx.objMove);
             }
             else if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
             {
                 transform.position -= transform.forward;
+                AudioManager.Instance.PlaySFX(AudioManager.Sfx.objMove);
             }
             else if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
             {
                 transform.Rotate(0, +90, 0);
+                AudioManager.Instance.PlaySFX(AudioManager.Sfx.objMove);
             }
 
-
+            
         }
     }
 

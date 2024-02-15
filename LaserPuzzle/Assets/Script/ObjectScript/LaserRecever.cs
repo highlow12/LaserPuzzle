@@ -23,6 +23,7 @@ public class LaserRecever : LaserObject
         GameManager.Instance.laserReceve();
 
         effect = EffectManager.Instance.GetExpolsion(transform.position);
+        AudioManager.Instance.PlaySFX(AudioManager.Sfx.explosion);
         gameObject.SetActive(false);
     }
 

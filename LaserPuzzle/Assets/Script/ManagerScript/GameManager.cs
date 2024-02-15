@@ -50,6 +50,9 @@ public class GameManager : MonoBehaviour
 
         NextStage = words[0] + " " + num.ToString();
 
+
+        UIManager.Instance.SetMenuUI(false);
+        AudioManager.Instance.PlayBgm();
     }
 
     public static GameManager Instance 

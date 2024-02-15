@@ -7,6 +7,7 @@ public class SelectStageSceneChange : MonoBehaviour
 {
     public void selectStageSceneChange()
     {
+        AudioManager.Instance.PlaySFX(AudioManager.Sfx.Click);
         SceneManager.LoadScene("SelectScene");
     }
 }
