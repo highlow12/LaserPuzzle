@@ -130,15 +130,7 @@ public class LaserManager : MonoBehaviour
         laser.DOScale(new Vector3(laser.localScale.x, laser.localScale.y, Mathf.Abs(i)), laserDuration).SetEase(Ease.Linear).OnPlay
             (
                 () => laser.DOMove(dir * 0.5f, laserDuration).SetRelative().SetEase(Ease.Linear).OnComplete
-                (
-                    () => 
-                            StartCoroutine("IclearLasers", LaserClearDelay))
-                        
-                    
-                
-            );
-
-
+                (() => StartCoroutine("IclearLasers", LaserClearDelay)));
 
         lasers.Add(laser);
 

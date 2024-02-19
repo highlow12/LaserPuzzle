@@ -6,7 +6,7 @@ public class ShootButtenScript : MonoBehaviour
 {
     public void shootButten()
     {
-        if (GameManager.Instance.Remainchance > 0)
+        if (GameManager.Instance.Remainchance >= 0)
         {
             Debug.Log("shoot");
             GameManager.Instance.StageReset();
